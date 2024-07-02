@@ -1,0 +1,39 @@
+{
+  "name": "@itsuki927/mobx-loggable",
+  "version": "3.0.1",
+  "description": "mobx-loggable",
+  "main": "dist/index.js",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "tsup",
+    "release:major": "npm version $(semver $npm_package_version -i major) && npm publish --tag latest --access public",
+    "release:minor": "npm version $(semver $npm_package_version -i minor) && npm publish --tag latest --access public",
+    "release:patch": "npm version $(semver $npm_package_version -i patch) && npm publish --tag latest --access public",
+    "release:beta": "npm version $(semver $npm_package_version -i prerelease --preid beta ) && npm publish --access public --tag beta"
+  },
+  "keywords": [
+    "mobx logger",
+    "mobx-loggable"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "author": "@itsuki927",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "mobx": "^6.12.3",
+    "semver": "^7.6.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.4"
+  },
+  "peerDependencies": {
+    "mobx": "^6.12.3"
+  }
+}
